@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">List</string>
+    <string name="conection_e">No hay conexión disponible.</string>
+    <string name="resp">Respuesta recibida: %1$s</string>
+    <string name="resp_body">Respuesta recibida (body): %1$s</string>
+    <string name="affiliation">Afiliación: %1$s</string>
+    <string name="none">Desconocida</string>
+    <string name="invalid_position">Posición inválida: %1$d</string>
+    <string name="allies">Aliados: %1$s</string>
+    <string name="gender">Género: %1$s</string>
+    <string name="position">Posición: %1$s</string>
+    <string name="weapon">Armas: %1$s</string>
 </resources>
