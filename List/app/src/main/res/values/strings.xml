@@ -10,4 +10,8 @@
     <string name="gender">Género: %1$s</string>
     <string name="position">Posición: %1$s</string>
     <string name="weapon">Armas: %1$s</string>
+    <string name="none2">Desconocido</string>
+    <string name="none3">Desconocidos</string>
+    <string name="none4">Desconocidas</string>
+    <string name="received_id">Id recibido: %1$s</string>
 </resources>

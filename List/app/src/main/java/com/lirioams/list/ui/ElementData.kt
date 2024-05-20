@@ -31,7 +31,7 @@ class ElementData : AppCompatActivity() {
 
         val id = bundle?.getString("id", "")
 
-        Log.d(Constants.LOGTAG, "Id recibido $id")
+        Log.d(Constants.LOGTAG, getString(R.string.received_id, id))
 
         //Generamos una instancia a retrofit
         val retrofit = Retrofit.Builder()
@@ -51,12 +51,12 @@ class ElementData : AppCompatActivity() {
 
                 binding.apply {
                     tvName.text = response.body()?.name
-                    val alliesText = response.body()?.allies?.filter { it.isNotBlank() }?.takeIf { it.isNotEmpty() }?.joinToString(", ") ?: "Allies Unknown"
+                    val alliesText = response.body()?.allies?.filter { it.isNotBlank() }?.takeIf { it.isNotEmpty() }?.joinToString(", ") ?: getString(R.string.none3)
                     binding.tvProffesion.text = binding.root.context.getString(R.string.allies, alliesText)
-                    binding.tvAffiliation.text = binding.root.context.getString(R.string.affiliation, response.body()?.affiliation?: "Unknown")
-                    binding.tvGender.text = binding.root.context.getString(R.string.gender, response.body()?.gender?: "Unknown")
-                    binding.tvPosition.text = binding.root.context.getString(R.string.position, response.body()?.position?: "Unknown")
-                    binding.tvWeapons.text = binding.root.context.getString(R.string.weapon, response.body()?.weapon?: "Unknown")
+                    binding.tvAffiliation.text = binding.root.context.getString(R.string.affiliation, response.body()?.affiliation?: getString(R.string.none))
+                    binding.tvGender.text = binding.root.context.getString(R.string.gender, response.body()?.gender?: getString(R.string.none2))
+                    binding.tvPosition.text = binding.root.context.getString(R.string.position, response.body()?.position?: getString(R.string.none))
+                    binding.tvWeapons.text = binding.root.context.getString(R.string.weapon, response.body()?.weapon?: getString(R.string.none4))
 
                     Glide.with(this@ElementData)
                         .load(response.body()?.image)
@@ -72,7 +72,7 @@ class ElementData : AppCompatActivity() {
                 binding.pbLoading.visibility = View.INVISIBLE
 
                 Toast.makeText(this@ElementData,
-                    "No hay conexión disponible",
+                    getString(R.string.conection_e),
                     Toast.LENGTH_SHORT)
                     .show()
             }
